@@ -93,11 +93,8 @@ IP6=$(curl -6 -s icanhazip.com | cut -f1-4 -d':')
 
 echo "Internal ip = ${IP4}. Exteranl sub for ip6 = ${IP6}"
 
-# echo "How many proxy do you want to create? Example 500"
-COUNT = 10
-
 FIRST_PORT=20000
-LAST_PORT=$(($FIRST_PORT + $COUNT))
+LAST_PORT=20010
 
 gen_data >$WORKDIR/data.txt
 gen_iptables >$WORKDIR/boot_iptables.sh
